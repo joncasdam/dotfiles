@@ -1,0 +1,17 @@
+[user]
+	name = Jonatas C Damasceno
+	email = jonatas.cd@gmail.com
+[color]
+	ui = true
+[alias]
+	ci = commit
+	st = status
+	co = checkout
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    ld = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
+    ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[core]
+	excludesfile = todo
