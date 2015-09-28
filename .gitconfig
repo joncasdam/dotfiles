@@ -17,6 +17,11 @@
     added = yellow
     #changed = green
     untracked = cyan
+[color "diff-highlight"]
+    oldNormal = "red bold"
+    oldHighlight = "red bold 52"
+    newNormal = "white bold"
+    newHighlight = "white bold 22"
 [alias]
 	ci = commit
 	st = status
@@ -29,9 +34,11 @@
 	smudge = git-media-smudge %f
 [core]
 	excludesfile = /Users/jonatascd/.gitignore_global
+    # to install diff-highlight
+    pager = bash -lc 'diff-highlight | strip_diff_leading_symbols | less -r' -
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    #path =
+    path =
 [mergetool "sourcetree"]
 	cmd = /Volumes/SourceTree/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
