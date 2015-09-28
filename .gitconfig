@@ -2,7 +2,21 @@
 	name = Jonatas C Damasceno
 	email = jonatas.cd@gmail.com
 [color]
-	ui = true
+    ui = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = white bold
+[color "status"]
+    branch = red bold
+    added = yellow
+    #changed = green
+    untracked = cyan
 [alias]
 	ci = commit
 	st = status
@@ -14,4 +28,10 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [core]
-	excludesfile = todo
+	excludesfile = /Users/jonatascd/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    #path =
+[mergetool "sourcetree"]
+	cmd = /Volumes/SourceTree/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
