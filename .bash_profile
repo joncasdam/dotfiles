@@ -7,8 +7,9 @@ alias l="ls -a"
 alias ls="ls -G"
 alias la="ls -AF"
 alias reload="source ~/.bash_profile"
-alias ht='cd /Applications/MAMP/htdocs/'
-alias tailf='tail -f'
+alias ht="cd /Applications/MAMP/htdocs/"
+alias tailf="tail -f"
+alias cleanpyc="find . -name \*.pyc -delete"
 
 export LSCOLORS='Gxfxcxdxdxegedabagacad'
 
