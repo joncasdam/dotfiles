@@ -1,8 +1,19 @@
 
 alias ..="cd .."
+
+# git
 alias gst="git status"
 alias gdf="git diff"
+alias gfix="git commit --fixup"
+alias gdap="git add -p"
+alias gl1="git log --oneline"
+alias gpush="git push origin +HEAD"
+alias grbmaster="git stash && git rebase -i origin/master"
+alias grba="git stash && git rebase -i --autosquash "
+alias grbax="git stash && git rebase -i --autosquash $(git log -n 1 --pretty=format:'%H' origin/master)"
+alias glast="git log --name-status HEAD^..HEAD"
 alias lasttag="git describe --abbrev=0 --tags"
+
 alias l="ls -a"
 alias ls="ls -G"
 alias la="ls -AF"
@@ -36,8 +47,17 @@ export PATH
 ##################
 # docker alias
 ##################
+alias see_containers_stopped='docker ps -a -q'
+alias remove_containers_stopped='docker rm $(docker ps -a -q)'
+alias see_images_stopped='docker images | grep "^<none>" | awk "{print $3}"'
+alias remove_images_stopped='docker rmi $(docker images | grep "^<none>" | awk "{print $3}")'
+alias remove_containers_exited='docker rm $(docker ps -a -q -f "status=exited")'
+alias mvne='docker exec -it mvne'
+
 alias doma='docker-machine'
 alias doco='docker-compose'
+alias dosh='~/docker_bash.sh'
+
 
 ##################
 # docker functions
